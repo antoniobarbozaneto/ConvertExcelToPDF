@@ -1,0 +1,12 @@
+
+Executar --ConvertXlsxToPDF.py
+
+caminho + arq [Entrada] --C:/ThomsonReuters/automations/Excel_To_PDF/PackingList_20211230232029.xls
+
+caminho + arq [Saida] -- C:/ThomsonReuters/automations/Excel_To_PDF/PackingList_20211230232029.pdf
+
+
+
+---
+Comando Completo Teste:
+-- ConvertExcelToPDF.py C:/ThomsonReuters/automations/Excel_To_PDF/PackingList_20211230232029.xls

@@ -6,14 +6,16 @@ import win32com.client
 if __name__ == '__main__':
 
     arquivo_caminho = str(sys.argv[1])
-
+    nome_arquivo = ""
     if arquivo_caminho == "help":
         print("     Conversor Excel para PDF v1.0"
+              "\n---------------------------------------"
               "\n \n Execute o programa ConvertXlsxToPDF.py passando como parâmetro o caminho completo, "
-              "\n incluindo o nome do arquivo Excel e sua extensão que deseja converter para PDF, "
-              "\n o arquivo de saída será salvo com o mesmo nome na mesma pasta do arquivo de entrada."
+              "\n incluindo o nome e a extensão do arquivo Excel que deseja converter para PDF. "
+              "\n O arquivo de saída será salvo com o mesmo nome e na mesma pasta do arquivo de entrada."
+              "\n        Importante: O arquivo Excel deve estar configurado com layout A4."
               "\n \n Exemplo:"
-              '\n ConvertXlsxToPDF.py C:/ThomsonReuters/automations/Excel_To_PDF/RelatorioExcel.xls'
+              '\n Comando: ConvertXlsxToPDF.py C:/ThomsonReuters/automations/Excel_To_PDF/RelatorioExcel.xls'
               "\n \n Saída:"
                '\n C:/ThomsonReuters/automations/Excel_To_PDF/RelatorioExcel.pdf'
               "\n")
@@ -26,10 +28,12 @@ if __name__ == '__main__':
     index = nome_arquivo.index('.') #seta o ponto como index
     nome_arquivo = nome_arquivo[:index] #remove a extensão
     # Caminho para salvar o PDF
+    nome_arq = os.path.basename(arquivo_caminho)
+    arquivo_caminho = arquivo_caminho.replace(nome_arq, "")
     PATH_TO_PDF = r'' + arquivo_caminho + ''+nome_arquivo+'.pdf'
+
     excel = win32com.client.Dispatch("Excel.Application")
     excel.Visible = False
-    print ("nome arquivo:" + nome_arquivo)
     print('Start conversion to PDF')
     # Abre o Excel
     wb = excel.Workbooks.Open(WB_PATH)

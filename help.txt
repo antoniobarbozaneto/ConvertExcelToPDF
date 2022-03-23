@@ -9,4 +9,4 @@ caminho + arq [Saida] -- C:/ThomsonReuters/automations/Excel_To_PDF/PackingList_
 
 ---------------------------------------------------------------------------
 Comando Completo Teste:
--- ConvertExcelToPDF.py C:/ThomsonReuters/automations/Excel_To_PDF/rel_1.xls
+-- ConvertExcelToPDF.py C:/ThomsonReuters/automations/Excel_To_PDF/rel_1.xlsx

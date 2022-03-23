@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
     excel = win32com.client.Dispatch("Excel.Application")
     excel.Visible = False
-    print('Start conversion to PDF')
+    print('Start conversion to PDF...')
     # Abre o Excel
     wb = excel.Workbooks.Open(WB_PATH)
     # Especificar o sheet que deseja converter, pode ser um array ex: [1, 2, 3, 4, ...]
